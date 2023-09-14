@@ -34,65 +34,26 @@
     </section>
 </main>
 
-<!--    FOOTER-->
 <footer class="footer">
     <div class="container">
-        <nav class="navigation grid footer__navigation">
-            <a href="#" class="navigation__logo"><img class="navigation__image" src="./images/logo.svg" alt="Логотип"></a>
+        <nav class="grid navigation footer__navigation">
+            <a class="navigation__logo" href="/"><img class="navigation__logo-image" src="./images/logo.svg" alt="Логотип"></a>
             <ul class="navigation__list">
-                <li class="navigation__item"><a href="#" class="navigation__link navigation__link--active">Главная</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Мода</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Технологии</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Музыка</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Спорт</a></li>
+                <li class="navigation__item"><a href="./index.html" class="navigation__link ">Главная</a></li>
+                <li class="navigation__item"><a href="./fashion.html" class="navigation__link">МОДА</a></li>
+                <li class="navigation__item"><a href="./technologies.html" class="navigation__link">ТЕХНОЛОГИИ</a></li>
+                <li class="navigation__item"><a href="politics.html" class="navigation__link navigation__link--active">ПОЛИТИКА</a></li>
+                <li class="navigation__item"><a href="./sport.html" class="navigation__link">СПОРТ</a></li>
             </ul>
         </nav>
 
-        <div class="footer__column">
+        <div class="footer__bottom">
             <p class="footer__text">Новостная лента сделана <a href="https://tesvintsevDev.github.io" target="_blank" class="footer__link">TES.inc</a>
                 при поддержке <a href="https://karpov.courses/frontend" target="_blank" class="footer__link">Karpov.Courses</a></p>
-            <p class="footer__copyright">© 2023</p>
+            <p class="footer__text footer__text--gray">© 2023</p>
         </div>
     </div>
 </footer>
-
-<template id="main-news-item">
-    <article class="main-article">
-            <div class="main-article__image-container">
-                <img src="./images/image.jpg" alt="Фото новости" class="main-article__image">
-            </div>
-            <div class="main-article__content">
-                <span class="article-category main-article__category">
-                    Технологии
-                </span>
-                <h2 class="main-article__title">
-                    Вещи, которые нужно знать перед стажировкой в IT сфере
-                </h2>
-                <p class="main-article__text">
-                    Новая мода на топовые наряды необычных цветов. В сезоне – топики, шорты-боксеры, сланцы и сандалии. А также большие солнечные очки и яркая шляпка.
-                </p>
-                <span class="article-source main-article__source">
-                    Источник
-                </span>
-            </div>
-    </article>
-</template>
-
-<template id="small-article-item">
-<article class="small-article">
-            <h2 class="small-article__title">
-                Самое трогательное видео дня: котенок не мог забраться на крышу, но ему помогла другая…
-            </h2>
-            <p class="small-article__caption">
-                <span class="article-date small-article__date">
-                  14 июля
-                </span>
-                <span class="article-source small-article__source">
-                    Источник
-                </span>
-            </p>
-</article>
-</template>
 
 <script src="./script.js"></script>
 </body>
