@@ -6,6 +6,8 @@
   grid-template-columns: repeat(9, var(--grid-column-width));
 
   gap: var(--grid-gap);
+
+  cursor: pointer;
 }
 
 .main-article:last-child {
