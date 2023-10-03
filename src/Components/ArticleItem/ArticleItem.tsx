@@ -6,16 +6,9 @@ import { RelatedSmallArticle } from '../RelatedSmallArticle/RelatedSmallArticle'
 
 import { SingleLineTitleArticle } from '../SingleLineTitleArticle/SingleLineTitleArticle';
 
-import {
-  Article,
-  ArticleItemAPI,
-  Category,
-  NewsAPI,
-  RelatedArticlesAPI,
-  Source,
-} from '../../types';
+import { Article, ArticleItemAPI, Category, RelatedArticlesAPI, Source } from '../../types';
 
-import { beautifyDate, categoryIds } from '../../utils';
+import { beautifyDate } from '../../utils';
 
 interface Props {
   id: number;
@@ -51,18 +44,14 @@ export const ArticleItem: FC<Props> = ({ id, categories, sources, onArticleClick
     <section className="article-page">
       <article className="article">
         {articleItem.image.length ? (
-          <section
-            className="article__hero"
-            style={{ backgroundImage: `url(${articleItem.image})` }}>
+          <section className="article__hero" style={{ backgroundImage: `url(${articleItem.image})` }}>
             <div className="container article__hero-content">
               <div className="grid">
                 <h1 className="article__hero-title">{articleItem.title}</h1>
               </div>
 
               <div className="grid">
-                <span className="article-category article__category">
-                  {articleItem.category.name}
-                </span>
+                <span className="article-category article__category">{articleItem.category.name}</span>
                 <span className="article-date article__date">{beautifyDate(articleItem.date)}</span>
               </div>
             </div>
@@ -76,12 +65,8 @@ export const ArticleItem: FC<Props> = ({ id, categories, sources, onArticleClick
                 <h1 className="article__title">{articleItem.title}</h1>
 
                 <div className="grid">
-                  <span className="article-category article__category">
-                    {articleItem.category.name}
-                  </span>
-                  <span className="article-date article__date">
-                    {beautifyDate(articleItem.date)}
-                  </span>
+                  <span className="article-category article__category">{articleItem.category.name}</span>
+                  <span className="article-date article__date">{beautifyDate(articleItem.date)}</span>
                 </div>
               </div>
             )}

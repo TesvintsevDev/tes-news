@@ -4,6 +4,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // плагин, необходимый для подстановки в файл index.html скрипта сгенерированного webpack
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const EslintWebpackPlugin = require('eslint-webpack-plugin');
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: { main: './src/index.tsx' }, // точка входа - указывает путь к основному скрипту проекта, отыскав его, вебпак выстроит дерево зависимостей и раскрутит все импорты по цепочке
@@ -59,6 +61,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+    }),
+    new StylelintWebpackPlugin({
+      files: '{**/*,*}.css',
+    }),
+    new EslintWebpackPlugin({
+      files: '{**/*,*}.{tsx,ts,js}',
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),

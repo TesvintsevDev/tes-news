@@ -17,7 +17,6 @@ interface Props {
 }
 
 export const Navigation: FC<Props> = ({ onNavClick, currentCategory, className = '', placement = 'header' }) => {
- 
   return (
     <nav className={`grid navigation navigation--${placement} ${className}`}>
       <a className="navigation__logo" data-href="index" href="#">
@@ -30,11 +29,11 @@ export const Navigation: FC<Props> = ({ onNavClick, currentCategory, className =
             <li className="navigation__item" key={item}>
               <a
                 onClick={onNavClick}
-                className={`navigation__link ${
-                  currentCategory === item ? 'navigation__link--active' : ''
-                }`}
+                className={`navigation__link ${currentCategory === item ? 'navigation__link--active' : ''}`}
                 data-href={item}
-                href="#">
+                href="#"
+              >
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                 {/* @ts-ignore */}
                 {categoryNames[item]}
               </a>

@@ -20,8 +20,8 @@ export const Articles: FC<Props> = ({ articles, onArticleClick }) => {
       <div className="container grid">
         <section className="articles__big-column">
           {articles.items.slice(4, 7).map((item) => {
-            const category = articles.categories.find(({id}) => item.category_id === id);
-            const source = articles.sources.find(({id}) => item.source_id === id);
+            const category = articles.categories.find(({ id }) => item.category_id === id);
+            const source = articles.sources.find(({ id }) => item.source_id === id);
 
             return (
               <MainArticle
@@ -39,7 +39,7 @@ export const Articles: FC<Props> = ({ articles, onArticleClick }) => {
 
         <section className="articles__small-column">
           {articles.items.slice(3, 12).map((item) => {
-            const source = articles.sources.find(({id}) => item.source_id === id);
+            const source = articles.sources.find(({ id }) => item.source_id === id);
             return (
               <SmallArticle
                 key={item.title}

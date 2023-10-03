@@ -16,14 +16,7 @@ interface Props {
   onClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-export const SingleLineTitleArticle: FC<Props> = ({
-  image,
-  title,
-  source,
-  text,
-  category,
-  onClick,
-}) => {
+export const SingleLineTitleArticle: FC<Props> = ({ image, title, source, text, category, onClick }) => {
   return (
     <article className="single-line-title-article" onClick={onClick}>
       <img className="single-line-title-article__image" src={image} />
