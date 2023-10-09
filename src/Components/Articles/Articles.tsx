@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { useParams } from 'react-router-dom';
 import { MainArticle } from '../MainArticle/MainArticle';
 import { SmallArticle } from '../SmallArticle/SmallArticle';
 import './Articles.css';
 import { NewsAPI } from '../../types';
+import { useParams } from 'react-router-dom';
 import { categoryIds } from '../../utils';
 
 export const Articles: FC = () => {

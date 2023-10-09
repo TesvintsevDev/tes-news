@@ -1,7 +1,7 @@
 .small-article {
   margin-bottom: 35px;
-  cursor: pointer;
   display: block;
+  cursor: pointer;
 }
 
 .small-article:last-child {
