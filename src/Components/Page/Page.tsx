@@ -17,7 +17,7 @@ export const Page: FC = ({ children }) => {
         <div className="container">
           <Navigation placement="footer" className="footer__navigation" />
           <div className="footer__bottom">
-            <p className='footer__text'>
+              <p className='footer__text'>
                 Проект разработан{" "}
                 <a href='https://tesvintsevDev.github.io'  className='footer__link'>
                   TES inc.{" "}
