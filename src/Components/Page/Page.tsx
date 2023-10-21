@@ -17,18 +17,17 @@ export const Page: FC = ({ children }) => {
         <div className="container">
           <Navigation placement="footer" className="footer__navigation" />
           <div className="footer__bottom">
-              <p className='footer__text'>
-                Проект разработан{" "}
-                <a href='https://tesvintsevDev.github.io'  className='footer__link'>
-                  TES inc.{" "}
-                </a>
-                при поддержке{" "}
-                <a href='https://karpov.courses/frontend' className='footer__link'>
-                  Karpov.Courses
-                </a>
-              </p>
-
-              <p className="footer__text footer__text--gray">© 2023</p>
+            <p className="footer__text">
+              Новостная лента сделана{' '}
+              <a className="footer__link" href="https://tesvintsevDev.github.io" target="_blank" rel="noreferrer">
+                TES.inc{' '}
+              </a>
+              при поддержке{' '}
+              <a href="https://karpov.courses/frontend" target="_blank" rel="noreferrer" className="footer__link">
+                Karpov.Courses
+              </a>
+            </p>
+            <p className="footer__text footer__text--gray">© 2023</p>
           </div>
         </div>
       </footer>

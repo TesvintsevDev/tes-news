@@ -16,7 +16,7 @@ export const Navigation: FC<Props> = ({ className = '', placement = 'header' }) 
         <img className="navigation__logo-image" src={logo} alt="Логотип" />
       </NavLink>
       <ul className="navigation__list">
-        {['index', 'fashion', 'technologies', 'sport', 'politics'].map((item) => {
+        {['index', 'fashion', 'technologies', 'politics', 'sport'].map((item) => {
           return (
             <li className="navigation__item" key={item}>
               <NavLink

@@ -1,15 +1,11 @@
 {
-  "name": "react-admin-form",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
   "scripts": {
     "eslint": "eslint --ext .js,.ts,.tsx ./",
     "stylelint": "stylelint \"src/{**/*,*}.css\"",
     "prettier": "prettier --write ./",
     "prettier-check": "prettier --check ./",
     "start": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env webpack"
+    "build": " cross-env webpack"
   },
   "dependencies": {
     "@babel/cli": "7.15.7",
@@ -28,6 +24,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-webpack-plugin": "^3.0.1",
+    "firebase": "^9.4.1",
     "html-webpack-plugin": "^5.3.2",
     "pre-commit": "^1.2.2",
     "prettier": "^2.4.1",
