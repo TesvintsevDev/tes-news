@@ -9,7 +9,7 @@
     "prettier": "prettier --write ./",
     "prettier-check": "prettier --check ./",
     "start": "cross-env NODE_ENV=development webpack serve",
-    "build": " cross-env webpack"
+    "build": "cross-env webpack"
   },
   "dependencies": {
     "@babel/cli": "7.15.7",
