@@ -1,15 +1,11 @@
 {
-  "name": "tes-news",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
   "scripts": {
     "eslint": "eslint --ext .js,.ts,.tsx ./",
     "stylelint": "stylelint \"src/{**/*,*}.css\"",
     "prettier": "prettier --write ./",
     "prettier-check": "prettier --check ./",
     "start": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env webpack"
+    "build": " cross-env webpack"
   },
   "dependencies": {
     "@babel/cli": "7.15.7",
@@ -22,6 +18,7 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "babel-loader": "^8.2.2",
+    "classnames": "^2.3.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.3.0",
     "eslint": "^7.32.0",

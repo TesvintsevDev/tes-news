@@ -1,17 +1,21 @@
-export const categoryIds: { [index: string]: number } = {
-  index: 0,
-  fashion: 3,
-  technologies: 1,
-  politics: 4,
+import { CategoryNames } from './types';
+
+export const categoryIds: Record<CategoryNames, number> = {
   sport: 2,
+  tech: 1,
+  // ['karpov.courses']: 6,
+  fashion: 3,
+  other: 5,
+  politics: 4,
 };
 
-export const categoryNames: { [index: string]: string } = {
-  index: 'Главная',
+export const categoryTitles: Record<CategoryNames, string> = {
   fashion: 'Мода',
-  technologies: 'Технологии',
-  politics: 'Политика',
+  tech: 'Технологии',
   sport: 'Спорт',
+  // ['karpov.courses']: 'Karpov',
+  other: 'Прочее',
+  politics: 'Политика',
 };
 
 export const beautifyDate = (date: string): string => {
