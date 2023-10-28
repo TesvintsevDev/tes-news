@@ -10,7 +10,10 @@
     ],
     "baseUrl": "src",
     "paths": {
-      "@components/*": ["Components/*"],
+      "@components/*": ["components/*"],
+      "@features/*": ["features/*"],
+      "@app/*": ["app/*"],
+      "@images/*": ["images/*"]
     }
   },
   "include": ["src"],

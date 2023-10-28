@@ -1,8 +1,8 @@
 import React, { FC, HTMLAttributes, RefObject, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import throttle from 'lodash.throttle';
-import './Dropdown.css';
 import classNames from 'classnames';
+import './Dropdown.css';
 
 interface DropdownProps extends HTMLAttributes<HTMLElement> {
   targetRef: RefObject<HTMLElement>;

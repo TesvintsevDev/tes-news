@@ -10,8 +10,8 @@ const mode = process.env.NODE_ENV || 'production';
 module.exports = {
   mode,
   entry: {
-    main: './src/script.tsx',
-    initColorScheme: './src/initColorScheme.ts',
+    main: './src/index.tsx',
+    initColorScheme: './src/features/colorScheme/initColorScheme.ts',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -30,7 +30,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.svg$/,
+        test: /\.(svg|jpg)$/,
         type: 'asset/resource',
       },
       {
@@ -43,7 +43,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
     alias: {
-      '@components': path.resolve('./src/Components'),
+      '@components': path.resolve('./src/components'),
+      '@features': path.resolve('./src/features'),
+      '@app': path.resolve('./src/app'),
+      '@images': path.resolve('./src/images'),
     },
   },
   optimization: {
@@ -51,7 +54,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/app/index.html',
     }),
     new HtmlInlineScriptWebpackPlugin([/initColorScheme\..+\.js$/]),
     new MiniCssExtractPlugin({

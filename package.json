@@ -8,8 +8,8 @@
     "stylelint": "stylelint \"src/{**/*,*}.css\"",
     "prettier": "prettier --write ./",
     "prettier-check": "prettier --check ./",
-    "start": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env webpack"
+    "start": " cross-env NODE_ENV=development webpack serve",
+    "build": "webpack"
   },
   "dependencies": {
     "@babel/cli": "7.15.7",
@@ -19,7 +19,8 @@
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.0.5",
     "@mui/material": "^5.0.6",
-    "@types/lodash.throttle": "^4.1.7",
+    "@reduxjs/toolkit": "^1.7.0",
+    "@types/lodash.throttle": "^4.1.6",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "babel-loader": "^8.2.2",
@@ -39,6 +40,7 @@
     "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "style-loader": "^3.3.0",
     "stylelint": "^13.13.1",
