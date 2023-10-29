@@ -4,10 +4,10 @@ import './Page.css';
 import { Navigation } from '@components/Navigation/Navigation';
 import { Logo } from '@components/Logo/Logo';
 import { EmailModal } from '@features/subscribeNotification/components/EmailModal/EmailModal';
-import { ColorSchemeSwitcher } from '@features/colorScheme/components/ColorSchemeSwitcher/ColorSchemeSwitcher';
 import { Dispatch } from '@app/store';
 import { fetchCategories } from '@features/categories/actions';
 import { fetchSources } from '@features/sources/actions';
+import { Header } from '@components/Header/Header';
 
 const LS_EMAIL_SHOWN_KEY = 'newsfeed:email_modal_shown';
 
@@ -22,25 +22,16 @@ export const Page: FC = ({ children }) => {
 
   return (
     <Fragment>
-      {emailModalShown && (
-        <EmailModal
-          onClose={() => {
-            localStorage.setItem(LS_EMAIL_SHOWN_KEY, 'true');
-            setEmailModalShown(false);
-          }}
-        >
-          Hello
-        </EmailModal>
-      )}
-      <header className="header">
-        <div className="container header__container">
-          <Logo />
-          <Navigation className="header__navigation" />
-          <div className="header__controls" style={{ transform: 'translateX(0)' }}>
-            <ColorSchemeSwitcher />
-          </div>
-        </div>
-      </header>
+      <EmailModal
+        shown={emailModalShown}
+        onClose={() => {
+          localStorage.setItem(LS_EMAIL_SHOWN_KEY, 'true');
+          setEmailModalShown(false);
+        }}
+      >
+        Hello
+      </EmailModal>
+      <Header />
 
       <main>{children}</main>
 
@@ -53,7 +44,7 @@ export const Page: FC = ({ children }) => {
           <div className="footer__bottom">
             © 2023 Новостная лента сделана{' '}
             <a className="footer__link" href="https://tesvintsevDev.github.io" target="_blank" rel="noreferrer">
-              TES inc.{' '}
+              TES.inc{' '}
             </a>
               при поддержке{' '}
             <a href="https://karpov.courses/frontend" target="_blank" rel="noreferrer" className="footer__link">
