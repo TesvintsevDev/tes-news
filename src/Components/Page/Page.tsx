@@ -44,7 +44,7 @@ export const Page: FC = ({ children }) => {
           <div className="footer__bottom">
             © 2023 Новостная лента сделана{' '}
             <a className="footer__link" href="https://tesvintsevDev.github.io" target="_blank" rel="noreferrer">
-              TES.inc{' '}
+              TES inc.{' '}
             </a>
               при поддержке{' '}
             <a href="https://karpov.courses/frontend" target="_blank" rel="noreferrer" className="footer__link">

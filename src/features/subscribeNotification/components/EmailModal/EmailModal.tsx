@@ -26,7 +26,7 @@ export const EmailModal: FC<EmailModalProps> = ({ onClose, shown }: EmailModalPr
         <h2 className="email-modal__title">
           Хотите получать последние новости от{' '}
           <a className="email-modal__link" href="#">
-            TES Inc. и Karpov.courses?
+            TES inc. и KC?
           </a>
         </h2>
         <p className="email-modal__text">Оставьте свой e-mail и будем на связи!</p>
