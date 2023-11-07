@@ -11,7 +11,7 @@ const cachePrefix = 'newsfeed-cache';
 const cacheName = cachePrefix + '_' + version;
 
 _self.addEventListener('install', (event) => {
-  console.log('Installing [Service Worker]', event);
+  // console.log('Installing [Service Worker]', event);
 
   event.waitUntil(
     caches
