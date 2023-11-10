@@ -10,7 +10,7 @@
   --constant-grey1: #ebebeb;
   --constant-grey2: #a3a3a3;
   --constant-white: #fff;
-  --constant-red: #f53;
+  --constant-red: rgb(92, 51, 255);
   --container-width: 940px;
   --container-padding: 16px;
   --grid-column-width: 60px;
@@ -22,6 +22,8 @@
   --skeleton-color: var(--constant-grey1);
   --skeleton-gradient: linear-gradient(to right, transparent 0%, var(--constant-white-alpha64) 100%);
   --mobile-menu-button: #f2f2f2;
+  --outer-focus-border: 4px solid var(--constant-red);
+  --inner-focus-border: 0 0 0 4px var(--constant-red) inset;
 }
 
 [scheme="dark"] {
@@ -37,6 +39,10 @@
 *:not(svg *) {
   all: unset;
   display: revert;
+}
+
+*:focus-visible {
+  outline: var(--outer-focus-border);
 }
 
 a {
@@ -96,5 +102,12 @@ body {
 
   .grid {
     grid-template-columns: repeat(12, var(--grid-column-width));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
   }
 }

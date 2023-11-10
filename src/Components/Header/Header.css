@@ -31,7 +31,6 @@
   justify-content: center;
   border-radius: 8px;
   background: var(--mobile-menu-button);
-  cursor: pointer;
 }
 
 .header__mobile-controls {
@@ -52,7 +51,11 @@
   font-weight: 900;
   text-transform: uppercase;
   box-sizing: border-box;
-  cursor: pointer;
+}
+
+.header__mobile-back-button:focus-visible {
+  outline: none;
+  box-shadow: var(--inner-focus-border);
 }
 
 .header__mobile-back-button:hover {
@@ -70,6 +73,11 @@
 .header__mobile-navigation .navigation__link {
   display: block;
   padding: var(--container-padding);
+}
+
+.header__mobile-navigation .navigation__link:focus-visible {
+  outline: none;
+  box-shadow: var(--inner-focus-border);
 }
 
 .header__mobile-overlay {

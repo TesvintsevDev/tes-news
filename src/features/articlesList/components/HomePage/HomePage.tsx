@@ -44,44 +44,46 @@ export const HomePage: FC = () => {
 
   if (loading) {
     return (
-      <div className="home-page">
-        <div className="home-page__hero-link">
-          <HeroSkeleton className="home-page__hero" hasText={true} />
+      <div className="home-page" aria-label="Загрузка">
+        <div aria-hidden>
+          <div className="home-page__hero-link">
+            <HeroSkeleton className="home-page__hero" hasText={true} />
+          </div>
+          <section className="container home-page__section">
+            <Title Component="h2" className="home-page__title">
+              В тренде
+            </Title>
+            <div className="grid">
+              {repeat((i) => {
+                return (
+                  <ArticleCardSkeleton
+                    key={i}
+                    className="home-page__trends-item"
+                    hasImage={false}
+                    hasDescription={false}
+                  />
+                );
+              }, 6)}
+            </div>
+          </section>
+          <section className="container home-page__section">
+            <Title Component="h2" className="home-page__title">
+              Технологии
+            </Title>
+            <div className="grid">
+              <section className="home-page__content">
+                {repeat((i) => {
+                  return <ArticleCardSkeleton key={i} className="home-page__article-card" />;
+                }, 4)}
+              </section>
+              <aside className="home-page__sidebar">
+                {repeat((i) => {
+                  return <SidebarArticleCardSkeleton key={i} className="home-page__sidebar-item" />;
+                }, 2)}
+              </aside>
+            </div>
+          </section>
         </div>
-        <section className="container home-page__section">
-          <Title Component="h2" className="home-page__title">
-            В тренде
-          </Title>
-          <div className="grid">
-            {repeat((i) => {
-              return (
-                <ArticleCardSkeleton
-                  key={i}
-                  className="home-page__trends-item"
-                  hasImage={false}
-                  hasDescription={false}
-                />
-              );
-            }, 6)}
-          </div>
-        </section>
-        <section className="container home-page__section">
-          <Title Component="h2" className="home-page__title">
-            Технологии
-          </Title>
-          <div className="grid">
-            <section className="home-page__content">
-              {repeat((i) => {
-                return <ArticleCardSkeleton key={i} className="home-page__article-card" />;
-              }, 4)}
-            </section>
-            <section className="home-page__sidebar">
-              {repeat((i) => {
-                return <SidebarArticleCardSkeleton key={i} className="home-page__sidebar-item" />;
-              }, 2)}
-            </section>
-          </div>
-        </section>
       </div>
     );
   }
@@ -129,7 +131,7 @@ export const HomePage: FC = () => {
           Технологии
         </Title>
         <div className="grid">
-          <section className="home-page__content">
+          <div className="home-page__content">
             {techArticles.slice(2, 6).map((item) => {
               return (
                 <ArticleCard
@@ -144,8 +146,8 @@ export const HomePage: FC = () => {
                 />
               );
             })}
-          </section>
-          <section className="home-page__sidebar">
+          </div>
+          <aside className="home-page__sidebar">
             {techArticles.slice(0, 2).map((item) => {
               return (
                 <SidebarArticleCard
@@ -159,14 +161,14 @@ export const HomePage: FC = () => {
                 />
               );
             })}
-          </section>
+          </aside>
         </div>
       </section>
-      <div className="home-page__promo">
+      <section className="home-page__promo">
         <PartnerArticle />
-      </div>
+      </section>
       <section className="container grid home-page__section">
-        <section className="home-page__content">
+        <div className="home-page__content">
           {mainArticles.map((item) => {
             const source = sources.find(({ id }) => item.source_id === id);
 
@@ -183,9 +185,9 @@ export const HomePage: FC = () => {
               />
             );
           })}
-        </section>
+        </div>
         {isDesktop && (
-          <section className="home-page__sidebar">
+          <aside className="home-page__sidebar">
             {articles.slice(1, 4).map((item) => {
               const source = sources.find(({ id }) => item.source_id === id);
 
@@ -201,7 +203,7 @@ export const HomePage: FC = () => {
                 />
               );
             })}
-          </section>
+          </aside>
         )}
       </section>
     </div>

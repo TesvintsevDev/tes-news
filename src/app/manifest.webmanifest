@@ -1,7 +1,7 @@
 {
-  "name": "TES News Portal",
-  "short_name": "TES",
-  "description": "TES News: the important news",
+  "name": "K/C News",
+  "short_name": "K/C",
+  "description": "K/C News: the honestest news",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0083fc",
