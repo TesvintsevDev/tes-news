@@ -5,6 +5,7 @@ const cachePrefix = 'newsfeed-cache';
 const cacheName = cachePrefix + '_' + version;
 
 _self.addEventListener('install', (event) => {
+  // eslint-disable-next-line no-console
   console.log('Installing [Service Worker]', event);
 
   event.waitUntil(

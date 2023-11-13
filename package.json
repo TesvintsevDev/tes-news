@@ -1,15 +1,12 @@
 {
-  "name": "tes-news",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
   "scripts": {
     "eslint": "eslint --ext .js,.ts,.tsx ./",
     "stylelint": "stylelint \"src/{**/*,*}.css\"",
     "prettier": "prettier --write ./",
     "prettier-check": "prettier --check ./",
     "start": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env webpack"
+    "build": "cross-env webpack",
+    "locale:download": "localazy download"
   },
   "dependencies": {
     "@babel/cli": "7.15.7",
@@ -17,6 +14,7 @@
     "@babel/preset-react": "^7.14.5",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
+    "@localazy/cli": "^1.6.0",
     "@mui/icons-material": "^5.0.5",
     "@mui/material": "^5.0.6",
     "@reduxjs/toolkit": "^1.7.0",
@@ -36,12 +34,14 @@
     "focus-trap": "^6.7.1",
     "html-inline-script-webpack-plugin": "^2.0.3",
     "html-webpack-plugin": "^5.3.2",
+    "i18next": "^21.6.5",
     "lodash.throttle": "^4.1.1",
     "mini-css-extract-plugin": "^2.4.5",
     "pre-commit": "^1.2.2",
     "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-i18next": "^11.15.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "react-transition-group": "^4.4.2",

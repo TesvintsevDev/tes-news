@@ -7,11 +7,3 @@ export const categoryIds: Record<CategoryNames, number> = {
   politics: 4,
   other: 5,
 };
-
-export const categoryTitles: Record<CategoryNames, string> = {
-  fashion: 'Мода',
-  tech: 'Технологии',
-  sport: 'Спорт',
-  politics: 'Политика',
-  other: 'Прочее',
-};

@@ -8,6 +8,8 @@ import { App } from '@app/components/App/App';
 import { AuthContextProvider } from '@features/auth/AuthContextProvider';
 import { store } from '@app/store';
 import { NetworkStatusContextProvider } from '@features/networkStatus/NetworkStatusContextProvider';
+import { initI18n } from '@features/locale/utils';
+
 const firebaseApp = initializeAPI();
 
 if ('serviceWorker' in navigator) {
@@ -15,21 +17,27 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register('/sw.js?')
       .then(function () {
+        // eslint-disable-next-line no-console
         console.log('Service Worker Registered!!');
       })
-      .catch((e) => console.error('cant register SW', e));
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error('cant register SW', error);
+      });
   });
 }
 
-ReactDOM.render(
-  <Provider store={store}>
-    <NetworkStatusContextProvider>
-      <AuthContextProvider firebaseApp={firebaseApp}>
-        <Router>
-          <App />
-        </Router>
-      </AuthContextProvider>
-    </NetworkStatusContextProvider>
-  </Provider>,
-  document.getElementById('root')
-);
+initI18n(() => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <NetworkStatusContextProvider>
+        <AuthContextProvider firebaseApp={firebaseApp}>
+          <Router>
+            <App />
+          </Router>
+        </AuthContextProvider>
+      </NetworkStatusContextProvider>
+    </Provider>,
+    document.getElementById('root')
+  );
+});
