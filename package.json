@@ -1,4 +1,8 @@
 {
+  "name": "tes-news",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
   "scripts": {
     "eslint": "eslint --ext .js,.ts,.tsx ./",
     "stylelint": "stylelint \"src/{**/*,*}.css\"",
