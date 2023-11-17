@@ -12,7 +12,7 @@ const LS_EMAIL_SHOWN_KEY = 'newsfeed:email_modal_shown';
 
 export const Page: FC = ({ children }) => {
   const dispatch = useDispatch<Dispatch>();
-  const [emailModalShown, setEmailModalShown] = useState(!!localStorage.getItem(LS_EMAIL_SHOWN_KEY));
+  const [emailModalShown, setEmailModalShown] = useState(!localStorage.getItem(LS_EMAIL_SHOWN_KEY));
 
   React.useEffect(() => {
     dispatch(fetchCategories());
