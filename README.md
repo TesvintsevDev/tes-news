@@ -12,3 +12,5 @@
 Из внутренних фишек:
 1. Своя админка с партнёрскими материалами и авторизацией: фронтенд на Material UI, бэкенд на Firebase.
 2. Стек технологий: TypeScript, React, Redux, React Router, Jest, React Testing Library, Cypress
+
+https://frontend.karpovdns.net
