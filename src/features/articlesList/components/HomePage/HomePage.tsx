@@ -18,7 +18,7 @@ import { getSources } from '@features/sources/selectors';
 import { HeroSkeleton } from '@components/Hero/HeroSkeleton';
 import { ArticleCardSkeleton } from '@components/ArticleCard/ArticleCardSkeleton';
 import { SidebarArticleCardSkeleton } from '@components/SidebarArticleCard/SidebarArticleCardSkeleton';
-import { repeat } from '@app/utils';
+import { repeat, setMeta } from '@app/utils';
 import { useAdaptive } from '@app/hooks';
 import { useTranslation } from 'react-i18next';
 import { Locale } from '@features/locale/types';
@@ -42,6 +42,16 @@ export const HomePage: FC = () => {
       dispatch(fetchCategoryArticles({ lang: i18n.language, id: categoryIds['tech'] })),
     ]).then(() => {
       setLoading(false);
+    });
+  }, [i18n.language]);
+
+  React.useEffect(() => {
+    setMeta({
+      'og:title': 'KC News',
+      'og:description': t('page_head_description'),
+      'og:locale': i18n.language,
+      'og:url': window.location.href,
+      'og:image': `${window.location.origin}${require('@images/og_default_image.png')}`,
     });
   }, [i18n.language]);
 
@@ -101,6 +111,7 @@ export const HomePage: FC = () => {
       {firstArticle && (
         <Link className="home-page__hero-link" to={`/article/${firstArticle.id}`}>
           <Hero
+            autoHeight={false}
             className="home-page__hero"
             image={firstArticle.image}
             title={firstArticle.title}
@@ -114,7 +125,7 @@ export const HomePage: FC = () => {
         </Title>
         <div className="grid">
           {trendArticles.map(({ id, title, category_id, source_id, date }) => {
-            const category = categories[category_id];
+            const category = categories.find((item) => item.id === category_id);
             const source = sources.find(({ id }) => source_id === id);
 
             return (
@@ -134,7 +145,7 @@ export const HomePage: FC = () => {
       {i18n.language === Locale.ru && (
         <section className="container home-page__section">
           <Title Component="h2" className="home-page__title">
-            ТЕХНОЛОГИИ
+            TECH
           </Title>
           <div className="grid">
             <div className="home-page__content">

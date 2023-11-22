@@ -1,5 +1,6 @@
 {
   "article_page_content_title": "Article",
+  "article_page_recent_title": "Read more",
   "article_page_sub_article_title": "Secondary articles",
   "article_page_title": "Article info",
   "button_spinner": "Spinner",
@@ -29,6 +30,7 @@
   "locale_selected": "Selected language",
   "logo_main": "Home page",
   "offline_notification_text": "The website is offline. Check your network access",
+  "page_head_description": "News Feed developed on the Tes inc.",
   "partner_article_caption": "Sponsored article from {name}",
   "source_placeholder": "Source"
 }

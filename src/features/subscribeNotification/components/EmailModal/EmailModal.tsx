@@ -33,7 +33,7 @@ export const EmailModal: FC<EmailModalProps> = ({ onClose, shown }: EmailModalPr
           className="email-modal__title"
           id={MODAL_LABEL_ID}
           dangerouslySetInnerHTML={{
-            __html: t('email_modal_title', { link: `<a class="email-modal__link" href="#">Tes Inc. и Karpov.Courses?</a>` }),
+            __html: t('email_modal_title', { link: `<a class="email-modal__link" href="#">Tes inc. и Karpov.Courses?</a>` }),
           }}
         />
         <p className="email-modal__text" id={MODAL_DESCRIPTION_ID}>

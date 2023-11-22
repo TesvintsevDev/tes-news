@@ -44,17 +44,21 @@ _self.addEventListener('fetch', (e) => {
   if (url.startsWith('http') && e.request.method === 'GET') {
     const isHtmlPageRequest =
       request.headers.get('Accept')?.indexOf('text/html') !== -1 && url.startsWith(_self.origin);
-    const isImageRequest = !isHtmlPageRequest && request.headers.get('Accept')?.indexOf('image/') !== -1;
+    const isCacheFirstRequest =
+      !isHtmlPageRequest &&
+      (request.headers.get('Accept')?.indexOf('image/') !== -1 ||
+        (url.startsWith(_self.origin) && url.match(/(\.js|\.css)$/)) ||
+        url.match(/\.woff.$/));
 
     const cacheKey = isHtmlPageRequest ? '/' : e.request;
     // console.log('SW fetch', url, isHtmlPageRequest, isImageRequest, request.headers.get('Accept'));
     e.respondWith(
       (async () => {
-        if (isImageRequest) {
-          const imageCached = await caches.match(cacheKey);
-          if (imageCached) {
+        if (isCacheFirstRequest) {
+          const cacheResponse = await caches.match(cacheKey);
+          if (cacheResponse) {
             // console.log(`[Service Worker] Return cache resource: ${url}`);
-            return imageCached;
+            return cacheResponse;
           }
         }
 

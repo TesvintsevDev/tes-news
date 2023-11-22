@@ -18,8 +18,9 @@
       "@app/*": ["app/*"],
       "@images/*": ["images/*"]
     },
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "sourceMap": true,
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "src/features/serviceWorker"],
+  "exclude": ["node_modules", "dist", "src/features/serviceWorker"]
 }

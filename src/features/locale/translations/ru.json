@@ -1,5 +1,6 @@
 {
   "article_page_content_title": "Статья",
+  "article_page_recent_title": "Читайте также",
   "article_page_sub_article_title": "Второстепенный список статей",
   "article_page_title": "Информация о статье",
   "button_spinner": "Спиннер",
@@ -29,6 +30,7 @@
   "locale_selected": "Выбранный язык",
   "logo_main": "Главная страница",
   "offline_notification_text": "Сайт работает в оффлайне. Проверьте доступ к сети",
+  "page_head_description": "Новостная лента, разработанная Tes inc.",
   "partner_article_caption": "Партнерский материал от {name}",
   "source_placeholder": "Источник"
 }
